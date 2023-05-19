@@ -40,23 +40,23 @@ For more information about DNSSEC, as well as a great introductory read about DN
  - https://www.icann.org/resources/pages/dnssec-what-is-it-why-important-2019-03-05-en
 :::
 
-## Why does ENS require DNSSEC?
+## Why does FNS require DNSSEC?
 DNSSEC establishes a chain of trust through secure authentication from the root zone key all the way down to your domain name,
 ensuring that the ownership information for the domain can be trusted.
 
-ENS publishes the domain's public key to the blockchain and uses it to verify domain ownership.
+FNS publishes the domain's public key to the blockchain and uses it to verify domain ownership.
 
 <p align="center">
   <Image img="/img/faq/dnssec-dnskeys-1.webp"/>
 </p>
 
-## Pre-requisites for ENS
-There are two pre-requisite steps to making a DNS name work with ENS:
+## Pre-requisites for FNS
+There are two pre-requisite steps to making a DNS name work with FNS:
 
 ### 1. Enable DNSSEC
    
-Most registrars have some kind of interface for enabling it, but not all of them sets key types that ENS supports.
-ENS supports two types of keys:
+Most registrars have some kind of interface for enabling it, but not all of them sets key types that FNS supports.
+FNS supports two types of keys:
 	
 | Name | Description |
 |-|-|
@@ -114,7 +114,7 @@ If you run a unix-like operating system you can also use the terminal applicatio
 
 This is also a web front-end for an older unix utility named dnsviz. It's used to generate graphical visualizations of domain names, records all the way from the root zone to the TLD to the 2LD domain name itself.
 
-It's very useful to get a quick overview of what the issue is. Keep in mind that the warnings it shows don't always relate to what the issue with the DNSSEC configuration is for ENS. 
+It's very useful to get a quick overview of what the issue is. Keep in mind that the warnings it shows don't always relate to what the issue with the DNSSEC configuration is for FNS.
 
  - https://dnsviz.net/
 
@@ -167,14 +167,14 @@ Once your Registrar has published the DS records, which may be immediately or on
 Make sure that the TXT-record is named just `_ens` (all lower cap letters) and contains the string **a=**`yourwalletaddress`
 
 ### Wrong DNSSEC key type
-ENS supports `RSA/SHA-256` and `ECDSA` keys, make sure that DNSSEC for your domain is set up to use either of those two key types.
+FNS supports `RSA/SHA-256` and `ECDSA` keys, make sure that DNSSEC for your domain is set up to use either of those two key types.
 
 ### DNSSEC Errors
 DNSSEC is fairly complex to set up, and it's easy to make mistakes. Try taking a look at DNSViz to see if it shows any DNSSEC warnings.
 
 ### TLD doesn't support DNSSEC
 While gTLD's must support DNSSEC, the same isn't required of ccTLD's where TLD's can sometimes lack support for it.
-If your TLD does not support DNSSEC, it will not work with ENS.
+If your TLD does not support DNSSEC, it will not work with FNS.
 
 :::info
 For a list of TLD's that support DNSSEC
@@ -231,23 +231,23 @@ Bluehost currently supports DNSSEC for the following TLD's:
 
 
 ### The domain name doesn't exist
-Sometimes users try to import a domain name that doesn't exist into ENS, this doesn't work. The domain name must exist and be owned by the user importing it.
+Sometimes users try to import a domain name that doesn't exist into FNS, this doesn't work. The domain name must exist and be owned by the user importing it.
 
 ## FAQ
 
-### Can I register any DNS domain through the ENS app?
+### Can I register any DNS domain through the FNS app?
 Technically speaking, <Link to="https://medium.com/the-ethereum-name-service/upcoming-changes-to-the-ens-root-a1b78fd52b38">over 90% of domains</Link> can be supported.
 Some TLDs: `.ceo` `.art` `.club` `.luxe` and `.kred` are operated by each DNS registry.
 
-### If I own myname.xyz can I claim myname.eth?
-No. Under DNS integration, you can only claim the correspondent ENS name with the same top level domain (TLD).
-`.eth` is managed completely separately.
+### If I own myname.xyz can I claim myname.fil?
+No. Under DNS integration, you can only claim the correspondent FNS name with the same top level domain (TLD).
+`.fil` is managed completely separately.
 
 ### Once I register the domain, how can I transfer/delete ownership?
-Unlike .eth permanent registrar, there is no notion of registrant which can transfer the ownership of the controller.
-If you want to transfer the ownership to any address other than the currently registered address, please update the corresponding DNS record from your DNS manager and click `Transfer` from our ENS manager.
+Unlike .fil permanent registrar, there is no notion of registrant which can transfer the ownership of the controller.
+If you want to transfer the ownership to any address other than the currently registered address, please update the corresponding DNS record from your DNS manager and click `Transfer` from our FNS manager.
 
-We currently haven't enabled the ability to delete the ownership. Having said that, you can achieve the same effect if you set the owner record to `a=0x0000000000000000000000000000000000000000` then click `Transfer` from the ENS manager.
+We currently haven't enabled the ability to delete the ownership. Having said that, you can achieve the same effect if you set the owner record to `a=0x0000000000000000000000000000000000000000` then click `Transfer` from the FNS manager.
 
 ### Can I register my DNS subdomain?
-No. DNSSEC registration is only enabled for the second level domain (eg: `yourname.xyz`). If you want to create `subdomain.yourname.xyz`, then click `Subdomains` tab of our manager and create it from ENS manager just like other subdomains under `.eth`.
+No. DNSSEC registration is only enabled for the second level domain (eg: `yourname.xyz`). If you want to create `subdomain.yourname.xyz`, then click `Subdomains` tab of our manager and create it from FNS manager just like other subdomains under `.fil`.

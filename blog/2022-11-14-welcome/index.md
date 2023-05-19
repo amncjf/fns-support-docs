@@ -5,7 +5,7 @@ authors: [cthulu]
 tags: [support,docusaurus,docs,ens]
 ---
 
-## Welcome to the new ENS Support Docs
+## Welcome to the new FNS Support Docs
 This is the first release of the new support docs running on the Docusaurus platform, as opposed to the more minimalistic mdbook that was used previously.
 
 ## This is a work in progress

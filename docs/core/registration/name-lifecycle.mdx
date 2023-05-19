@@ -7,11 +7,11 @@ tags:
   - lifecycle
   - life cycle
 keywords: [expiration, lifecycle, life cycle, stages, name lifecycle]
-description: The stages an ENS name goes through from availability to expiration and temporary premium
+description: The stages an FNS name goes through from availability to expiration and temporary premium
 ---
 
-# The Lifecycle of an ENS Name
-ENS names goes through several stages from being available to being registered and expiring. A life cycle of sorts.
+# The Lifecycle of an FNS Name
+FNS names goes through several stages from being available to being registered and expiring. A life cycle of sorts.
 This article tries to explain its life cycle in simple terms. As such, the diagrams are simplified.
 
 ## Normal availability
@@ -40,7 +40,7 @@ class A active;
 A-->B-->C-->D-->E;
 E -.-> A;
 ```
-If the `Temporary auction` ends without a buyer the ENS name will become available normally again without a temporary fee attached.
+If the `Temporary auction` ends without a buyer the FNS name will become available normally again without a temporary fee attached.
 :::
 ## Registered
 
@@ -73,10 +73,10 @@ E -.-> A;
 <!--
 ## Registration period
 **Registration period** **→** `Expiration` **→** `Grace period` **→** `Premium auction` **→** `Normal availability`  
-This is the period of time you've registered the ENS name for.  
+This is the period of time you've registered the FNS name for.
 After the registration period is over, it will begin the process towards normal availability going through the post-expiration stages.
   
-If you want to extend your registration period, this can be done from the [ENS Manager App](https://app.ens.domains) -->
+If you want to extend your registration period, this can be done from the [FNS Manager App](https://app.fildomains.com) -->
 ## Expired
 :::info Expired
 ```mermaid
@@ -102,10 +102,10 @@ class C active;
 A-->B-->C-->D-->E;
 E -.-> A;
 ```
-This is when your ENS name expires. After an ENS name has expired, it will still point to your records until it's released. However:
+This is when your FNS name expires. After an FNS name has expired, it will still point to your records until it's released. However:
 :::
 :::caution
-An ENS name cannot be sold, transferred, or changed after this point. To regain control of it you must extend the registration period.
+An FNS name cannot be sold, transferred, or changed after this point. To regain control of it you must extend the registration period.
 :::
 
 ## Grace period
@@ -133,7 +133,7 @@ class D active;
 A-->B-->C-->D-->E;
 E -.-> A;
 ```
-After an ENS name expires it enters into what's called a *Grace period*. This is a 90-day window provided as a courtesy where the owner can renew it and keep it at the regular renewal cost.
+After an FNS name expires it enters into what's called a *Grace period*. This is a 90-day window provided as a courtesy where the owner can renew it and keep it at the regular renewal cost.
 :::
 :::caution
 If you let the grace period run out you will lose the name.
@@ -170,8 +170,8 @@ class E active;
 A-->B-->C-->D-->E;
 E -.-> A;
 ```
-After the grace period ends the ENS name will enter into a `Temporary Premium Auction`.
-This is a 21-day period where the ENS name is available for anyone to register with a temporary premium attached.
+After the grace period ends the FNS name will enter into a `Temporary Premium Auction`.
+This is a 21-day period where the FNS name is available for anyone to register with a temporary premium attached.
 
 For more information about the Temporary Premium Auction and the Temporary Premium Fee, see
  - <Link to="/core/registration/temporary-premium"><b>Registration: </b> Temporary Premium Auction</Link>

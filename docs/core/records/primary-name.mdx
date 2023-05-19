@@ -14,7 +14,7 @@ keywords: [primary, primary name, primaryname, identity, did, wallet name, set p
 
 ## How name resolution works
 
-The Primary name is your reverse record responsible for resolving your wallet address to your ENS name, effectively helping DApps and other services display your ENS name based on your *Ethereum* wallet address.
+The Primary name is your reverse record responsible for resolving your wallet address to your FNS name, effectively helping DApps and other services display your FNS name based on your *Filecoin* wallet address.
 
 The easiest way to understand it is to consider that name resolution works in two directions:
 
@@ -27,12 +27,12 @@ The easiest way to understand it is to consider that name resolution works in tw
       } } }%%
       
 graph LR;
-A(Your ENS Name);
+A(Your FNS Name);
 B(Your wallet address);
 
 A-->B;
 ```
-Forward resolution is simply where your name points to and is determined by the `ETH Address` record set on your ENS name.
+Forward resolution is simply where your name points to and is determined by the `FIL Address` record set on your FNS name.
 
 ### Reverse resolution
 ```mermaid
@@ -43,7 +43,7 @@ Forward resolution is simply where your name points to and is determined by the 
       } } }%%
 
 graph LR;
-A(Your ENS Name);
+A(Your FNS Name);
 B(Your wallet address);
 
 B-->A;

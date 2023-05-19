@@ -14,13 +14,13 @@ description: How to unwrap a previously wrapped name
 
 # Unwrapping Names
 
-Currently the ENS Manager App doesn't yet have this feature. It's on the roadmap, but in the meantime you can use this guide if you want to unwrap any names.
+Currently the FNS Manager App doesn't yet have this feature. It's on the roadmap, but in the meantime you can use this guide if you want to unwrap any names.
 
 Note that you can only unwrap a name if it hasn't been <Link to="/dev-basics/namewrapper/states#locked">Locked</Link>. Or in other words, if you have not revoked the permission to unwrap it.
 
 ## Using Unwrap Tool
 
-This is a small helper website we built on the side to address some edge-cases that may not make sense for the ENS Manager App (or are still on the roadmap):
+This is a small helper website we built on the side to address some edge-cases that may not make sense for the FNS Manager App (or are still on the roadmap):
 
 <BrowserWindow url="https://ens-misctools.vercel.app/unwrap/">
   <div style={{'background':'#F7F7F7'}}>
@@ -32,13 +32,13 @@ Enter the name you want to unwrap and it will automatically send the correct tra
 
 ## Using the contract directly
 
-If you want to invoke the unwrap contract methods directly, then follow the instructions in this section. The actual method to call will be different depending on whether it's a .eth second-level name, or any other name.
+If you want to invoke the unwrap contract methods directly, then follow the instructions in this section. The actual method to call will be different depending on whether it's a .fil second-level name, or any other name.
 
-### For .eth 2LDs
+### For .fil 2LDs
 
 You will need:
- - The **labelhash** for your .eth name, in hexadecimal format. See here for instructions: <Link to="/dev-basics/namehash#generating-a-labelhash">Generating a Labelhash</Link>
-   - Example: If your name is `name.eth`, then you will calculate the labelhash for `name`.
+ - The **labelhash** for your .fil name, in hexadecimal format. See here for instructions: <Link to="/dev-basics/namehash#generating-a-labelhash">Generating a Labelhash</Link>
+   - Example: If your name is `name.fil`, then you will calculate the labelhash for `name`.
 
 You can interact directly with the Name Wrapper contract on Etherscan: https://etherscan.io/address/0xd4416b13d2b3a9abae7acd5d6c2bbdbe25686401#writeContract#F23
 
@@ -63,10 +63,10 @@ Then click on "Write" to send the transaction to your wallet.
 
 You will need:
  - The **namehash** for the parent name, in hexadecimal format. See here for instructions: <Link to="/dev-basics/namehash#generating-a-namehash">Generating a Namehash</Link>
-   - Example: If your name is `sub.name.eth`, then you will calculate the namehash for `name.eth`.
+   - Example: If your name is `sub.name.fil`, then you will calculate the namehash for `name.fil`.
    - Example: If your name is `domain.xyz`, then you will calculate the namehash for `xyz`.
  - The **labelhash** for your name, in hexadecimal format. See here for instructions: <Link to="/dev-basics/namehash#generating-a-labelhash">Generating a Labelhash</Link>
-   - Example: If your name is `sub.name.eth`, then you will calculate the labelhash for `sub`.
+   - Example: If your name is `sub.name.fil`, then you will calculate the labelhash for `sub`.
    - Example: If your name is `domain.xyz`, then you will calculate the labelhash for `domain`.
 
 You can interact directly with the Name Wrapper contract on Etherscan: https://etherscan.io/address/0xd4416b13d2b3a9abae7acd5d6c2bbdbe25686401#writeContract#F22

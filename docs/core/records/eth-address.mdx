@@ -1,17 +1,17 @@
 ---
-title: ETH Address
+title: FIL Address
 last_update:
   author: cthulu
 tags:
-  - ETH Address
+  - FIL Address
   - ethaddress
   - ethrecord
   - Address record
   - Forward resolution
-keywords: [eth address, address record, address, forward resolution]
+keywords: [fil address, address record, address, forward resolution]
 ---
 
-# The ETH Address record
+# The FIL Address record
 ```mermaid
 %%{
   init: {
@@ -20,9 +20,9 @@ keywords: [eth address, address record, address, forward resolution]
       } } }%%
       
 graph LR;
-A(ETH Address Record);
-B(ENS Public Resolver);
-C(snowowl.eth);
+A(FIL Address Record);
+B(FNS Public Resolver);
+C(snowowl.fil);
 
 classDef active stroke-width:4px;
 classDef inactive stroke-dasharray: 5 5;
@@ -33,18 +33,18 @@ class B,C inactive;
 A --> B --> C;
 ```
 ## What does it do?
-The `ETH` Address record is one of the main records of your ENS name. It determines where Ethereum funds sent to it ends up, as well as providing the `forward resolution` required when setting up a <Link to="/core/records/primary-name"><b>Primary name</b></Link>.
+The `FIL` Address record is one of the main records of your FNS name. It determines where Filecoin funds sent to it ends up, as well as providing the `forward resolution` required when setting up a <Link to="/core/records/primary-name"><b>Primary name</b></Link>.
 
-If you find that an ENS name you own doesn't show up in the Primary Name drop-down list for your wallet, it's usually because the `ETH Address` record isn't set to it.
+If you find that an FNS name you own doesn't show up in the Primary Name drop-down list for your wallet, it's usually because the `FIL Address` record isn't set to it.
 
 :::info summary
-The ETH Address record...
- - Determines to where funds sent to the ENS name ends up
+The FIL Address record...
+ - Determines to where funds sent to the FNS name ends up
  - Provides the `Forward resolution` required to set a `Primary name` in a wallet 
 :::
 
 :::info Resources
-To find out how to set the `ETH Address` record or for more information about the Primary Name, see
+To find out how to set the `FIL Address` record or for more information about the Primary Name, see
  - <Link to="/howto/add-wallet-address"><b>How-To: </b>Add a wallet address</Link>
  - <Link to="/core/records/primary-name"><b>Records:</b> Primary Name</Link>
 :::

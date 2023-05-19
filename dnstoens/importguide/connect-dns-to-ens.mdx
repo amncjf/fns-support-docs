@@ -1,10 +1,10 @@
 ---
-title: "Connect a DNS name to the ENS Protocol"
-description: "An Overview of Connecting a DNS name to the ENS Protocol"
+title: "Connect a DNS name to the FNS Protocol"
+description: "An Overview of Connecting a DNS name to the FNS Protocol"
 sidebar_position: 1
 ---
 
-Other guides found on this site rely on using Cloudflare as the DNS host provider. Cloudflare offers a free-tier level of DNS Hosting that also comes with an optional IPFS gateway solution. The IPFS gateway feature is used in the [Host in Parallel DNS and ENS content from IPFS](/dnstoens/importguide/host-in-parallel) and [Query Blockchain Content through DNS Records](/dnstoens/importguide/dynamic-blockchain-content) guides. 
+Other guides found on this site rely on using Cloudflare as the DNS host provider. Cloudflare offers a free-tier level of DNS Hosting that also comes with an optional IPFS gateway solution. The IPFS gateway feature is used in the [Host in Parallel DNS and FNS content from IPFS](/dnstoens/importguide/host-in-parallel) and [Query Blockchain Content through DNS Records](/dnstoens/importguide/dynamic-blockchain-content) guides.
 
 :::note
 When changing DNS providers, be sure your records are set up correctly on the new DNS provider. Failing to do so could cause email routing to stop, or your website to not display. Please proceed after making necessary notes about your current DNS configuration.
@@ -18,9 +18,9 @@ Log into the control panel of your current DNS host provider. Look for the DNSSE
 
 <BrowserWindow img="/img/dnstoens/1-index-sc1.png"/>
 
-## Step 2: Set a TXT record to your Ethereum Wallet Address
+## Step 2: Set a TXT record to your Filecoin Wallet Address
 
-Next, create a DNS TXT record entry. This record will prove domain ownership and allow you to specify which Ethereum wallet address will have Controller permissions of the DNS domain name that will be enabled for blockchain functionality.
+Next, create a DNS TXT record entry. This record will prove domain ownership and allow you to specify which Filecoin wallet address will have Controller permissions of the DNS domain name that will be enabled for blockchain functionality.
 
 * The record type is: `TXT Record`
 * The host name is: `_ens`
@@ -28,9 +28,9 @@ Next, create a DNS TXT record entry. This record will prove domain ownership and
 
 <BrowserWindow img="/img/dnstoens/1-index-sc2.png"/>
 
-## Step 3: Connect the DNS domain to the ENS Protocol
+## Step 3: Connect the DNS domain to the FNS Protocol
 
-After DNSSEC is turned on and the the TXT record is create, your DNS domain will be ready for bridging to the ENS protocol. The [ENS Manager App](https://app.ens.domains) will indicate the domain is ready to register within ENS.
+After DNSSEC is turned on and the the TXT record is create, your DNS domain will be ready for bridging to the FNS protocol. The [FNS Manager App](https://app.fildomains.com) will indicate the domain is ready to register within FNS.
 
 <BrowserWindow img="/img/dnstoens/1-index-sc3.png"/>
 
@@ -38,4 +38,4 @@ After DNSSEC is turned on and the the TXT record is create, your DNS domain will
 
 * [DNS Visualizer Tool](https://dnsviz.net/) - A tool to help visual analysis of DNSSEC authentication.
 * [Verisign DNSSEC Analyszer](https://dnssec-debugger.verisignlabs.com/) - Test DNSSEC authentication and record resolution.
-* [DNS and ENS Further Development](/dnstoens/intro/future-dns-ens)
+* [DNS and FNS Further Development](/dnstoens/intro/future-dns-ens)

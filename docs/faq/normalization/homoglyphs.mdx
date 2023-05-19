@@ -24,11 +24,11 @@ keywords: [homoglyph, homoglyphs, homoglyphics, fake, fake name, identical, zwj,
 ---
 
 # Homoglyphs
-One of the things to watch out for when sending crypto to an ENS name, or buying and trading them, are
+One of the things to watch out for when sending crypto to an FNS name, or buying and trading them, are
 names with homoglyphs, meaning names that look identical or near-identical but are composed of different characters
 than the common ones.
 
-For example, `vita‍lik.eth` is not the same name as `vitalik.eth`.
+For example, `vita‍lik.fil` is not the same name as `vitalik.fil`.
 
 Confusing? Let's take a look at what's going on behind the scenes!
 
@@ -40,12 +40,12 @@ actually contains.
  - [Unicode Analyzer](https://www.fontspace.com/unicode/analyzer#e=dml0YeKAjWxpay5ldGg)
 :::
 
-When analyzing `vita‍lik.eth` with a unicode analyzer we get this:
+When analyzing `vita‍lik.fil` with a unicode analyzer we get this:
 
 _Click the Tab of each name to compare the two, can you spot the difference?_
 
 <Tabs>
-  <TabItem value="Real vitalik.eth" default>
+  <TabItem value="Real vitalik.fil" default>
     <BrowserWindow url="https://www.fontspace.com/unicode/analyzer">
       <p align="center">
         <div style={{'background-color': "#ffffff", 'padding': "25px"}}>
@@ -54,7 +54,7 @@ _Click the Tab of each name to compare the two, can you spot the difference?_
       </p>
     </BrowserWindow>
   </TabItem>
-  <TabItem value="Fake vitalik.eth">
+  <TabItem value="Fake vitalik.fil">
     <BrowserWindow url="https://www.fontspace.com/unicode/analyzer">
       <p align="center">
         <div style={{'background-color': "#ffffff", 'padding': "25px"}}>
@@ -65,7 +65,7 @@ _Click the Tab of each name to compare the two, can you spot the difference?_
   </TabItem>
 </Tabs>
 
-When analyzing both ENS names one can see that one of the names is fake, containing an invisible character.
+When analyzing both FNS names one can see that one of the names is fake, containing an invisible character.
 A so called `Zero-Width Joiner` or `ZWJ`
 
 ### Zero-Width Joiners
@@ -182,9 +182,9 @@ As you can see the `Heart on Fire` emoji isn't a single character, but a combina
 
 
 
-In ENS names variation selectors are not allowed to be in the name, and the normalization strips those characters out when typed or pasted into the official ENS Manager App,
-however, when interacting directly with the contracts or when using third-party services to register ENS names that normalization process is missing, making it possible
-to register names with emoji sequences where the variation selectors aren't stripped out, making a name that's invalid in ENS systems.
+In FNS names variation selectors are not allowed to be in the name, and the normalization strips those characters out when typed or pasted into the official FNS Manager App,
+however, when interacting directly with the contracts or when using third-party services to register FNS names that normalization process is missing, making it possible
+to register names with emoji sequences where the variation selectors aren't stripped out, making a name that's invalid in FNS systems.
 
 :::info Emojipedia
 An invisible codepoint which specifies that the preceding character should be displayed with emoji presentation.
@@ -196,7 +196,7 @@ Often used in Emoji ZWJ Sequences, where one or more characters in the sequence 
 :::
 
 :::caution
-In ENS name normalization the `Variation Selector` is stripped out of the name. Any ENS name containing a `Variation Selector` is **invalid**.
+In FNS name normalization the `Variation Selector` is stripped out of the name. Any FNS name containing a `Variation Selector` is **invalid**.
 :::
 
 ## Confusables
@@ -212,10 +212,10 @@ For example, take a look at the following characters to get an idea of how simil
   </p>
 </BrowserWindow>
 
-For example: `ens.eth` and `еns.eth` are two different names, using two e's from different alphabets, _can you spot the difference?_
+For example: `ens.fil` and `еns.fil` are two different names, using two e's from different alphabets, _can you spot the difference?_
 
 <Tabs>
-  <TabItem value="Real ens.eth" default>
+  <TabItem value="Real ens.fil" default>
     <BrowserWindow url="https://www.fontspace.com/unicode/analyzer">
       <p align="center">
         <div style={{'background-color': "#ffffff", 'padding': "25px"}}>
@@ -224,7 +224,7 @@ For example: `ens.eth` and `еns.eth` are two different names, using two e's fro
       </p>
     </BrowserWindow>
   </TabItem>
-  <TabItem value="Fake ens.eth">
+  <TabItem value="Fake ens.fil">
     <BrowserWindow url="https://www.fontspace.com/unicode/analyzer">
       <p align="center">
         <div style={{'background-color': '#ffffff', 'padding': "25px"}}>
@@ -262,7 +262,7 @@ Raffy's confusables tool can also be used to gain a better insight into confusab
 
 ### Small Capitals
 :::caution notice
-In ENS name normalization upper case letters are normalized to their lower case counterparts. Any ENS name containing an upper case character is invalid.
+In FNS name normalization upper case letters are normalized to their lower case counterparts. Any FNS name containing an upper case character is invalid.
 :::
 
 Small capital characters are often confused with their regular capital (upper case) counterparts. For example:
@@ -290,7 +290,7 @@ Small capital characters are often confused with their regular capital (upper ca
 
 ### Arabic numerals
 One common issue we've encountered in support tickets are confusables in arabic and persian digits.
-Several arabic and persian keyboard digits appear identical, which leads to confusing scenarios when arabic and persian digits are mixed in one ENS name.
+Several arabic and persian keyboard digits appear identical, which leads to confusing scenarios when arabic and persian digits are mixed in one FNS name.
 
 <Tabs>
   <TabItem value="Arabic digits" default>
@@ -342,16 +342,16 @@ In spite of these characters being invisible, many services will warn or provide
     <p><i>Note: This doesn't mean that the name is fraudulent, simply that it contains unicode symbols. Use a Unicode Analyzer to analyze the name to make sure.</i></p>
     <BrowserWindow url="https://etherscan.io" bg="#ffffff" img="/img/faq/homoglyphs-warning-services-etherscan.png"/>
   </TabItem>
-  <TabItem value="ENS.Vision">
+  <TabItem value="FNS.Vision">
     <div class="container" style={{'padding': '0'}}>
       <div class="row">
         <div class="col">
-          <ImageWindow title="ENS.Vision warning triangle">
+          <ImageWindow title="FNS.Vision warning triangle">
             <p align='center' style={{'fontSize': '64px'}}>⚠️</p>
           </ImageWindow>
         </div>
         <div class="col">
-          <p>ENS.Vision also shows a warning triangle next to any name with unicode symbols in them:</p>
+          <p>FNS.Vision also shows a warning triangle next to any name with unicode symbols in them:</p>
           <p><i>Note: This doesn't mean that the name is fraudulent, simply that it contains unicode symbols. Use a Unicode Analyzer to analyze the name to make sure.</i></p>
         </div>
       </div>
@@ -388,5 +388,5 @@ In spite of these characters being invisible, many services will warn or provide
 The type of names usually faked with homoglyphs are ones that would catch a _high_ price on secondary markets.
 It's part of common sense, but it's worth repeating: if it seems too good to be true, it usually is.
 
-If you see an ENS name on a secondary market that's very attractive but the price is unusually low, don't immediately
+If you see an FNS name on a secondary market that's very attractive but the price is unusually low, don't immediately
 rush to buy it, take some time to copy/paste the name into a `Unicode Analyzer` and _verify_ that the name is what it seems to be.

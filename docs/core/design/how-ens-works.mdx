@@ -7,14 +7,14 @@ tags:
   - how ens works
   - ens explained
 keywords: [registry, how does ens work, how ens works, ens explained]
-description: The Registry, where all ENS lookups start.
+description: The Registry, where all FNS lookups start.
 ---
 
-# How does ENS work?
-## The ENS Registry
-At the heart of the ENS protocol lies the Registry, which is where all ENS lookups start.
+# How does FNS work?
+## The FNS Registry
+At the heart of the FNS protocol lies the Registry, which is where all FNS lookups start.
 
-The Registry is a smart contract on Ethereum which keeps track of the `Manager` and the Resolver for all names.
+The Registry is a smart contract on Filecoin which keeps track of the `Manager` and the Resolver for all names.
 
 <p align="center">
   <div style={{'width': '600px'}}>
@@ -24,14 +24,14 @@ The Registry is a smart contract on Ethereum which keeps track of the `Manager` 
   </div>
 </p>
 
-As you can see, the Registry can have entries not just for .eth names, but all DNS names (like domain.com or domain.xyz) and subnames too (like sub.name.eth or sub.domain.xyz).
+As you can see, the Registry can have entries not just for .fil names, but all DNS names (like domain.com or domain.xyz) and subnames too (like sub.name.fil or sub.domain.xyz).
 
 The ``Manager``, as the name implies, is the account that controls that name. By interacting with the Registry contract, the `Manager` can update the Resolver, create or update subnames, or transfer the `Manager` to a new account.
 
-The first step in making an ENS lookup is to retrieve the resolver from the Registry.
+The first step in making an FNS lookup is to retrieve the resolver from the Registry.
 
 ## Resolvers
-A Resolver is a smart contract that “resolves” or “points” an ENS name to records. These records can include an ETH address, other coin addresses like BTC/LTC/etc., text records, and more. 
+A Resolver is a smart contract that “resolves” or “points” an FNS name to records. These records can include an FIL address, other coin addresses like BTC/LTC/etc., text records, and more.
 
 :::info Articles
 For more information on the various records that can be set, see:
@@ -42,7 +42,7 @@ For more information on the various records that can be set, see:
 
 ![Docusaurus themed image](/img/how-ens-works-light-2.jpg#gh-light-mode-only)![Docusaurus themed image](/img/how-ens-works-dark-2.jpg#gh-dark-mode-only)
 
-So together, the Registry and the Resolver allow records to be looked up for an ENS name. It is a two-step process. For example, to look up the ETH address for “name.eth”:
+So together, the Registry and the Resolver allow records to be looked up for an FNS name. It is a two-step process. For example, to look up the FIL address for “name.fil”:
 
 <p align='center'>
 
@@ -50,18 +50,18 @@ So together, the Registry and the Resolver allow records to be looked up for an 
 sequenceDiagram
     rect rgba(0,255,0,0.1)
     activate User Code
-    User Code->>+ENS Registry: resolver('foo.eth')
-    ENS Registry->>User Code: 0x12342...
-    deactivate ENS Registry
-    note over User Code,ENS Registry: 1. Retrieve the Resolver from<br>the Registry for node "name.eth"
+    User Code->>+FNS Registry: resolver('foo.fil')
+    FNS Registry->>User Code: 0x12342...
+    deactivate FNS Registry
+    note over User Code,FNS Registry: 1. Retrieve the Resolver from<br>the Registry for node "name.fil"
     end
 
     rect rgba(0,255,255,0.1)
-    User Code->>+Resolver @ 0x1234...: addr('foo.eth)
+    User Code->>+Resolver @ 0x1234...: addr('foo.fil)
     Resolver @ 0x1234...->>User Code: 0x2345...
     deactivate User Code
     deactivate Resolver @ 0x1234...
-    note over User Code,Resolver @ 0x1234...: 2. Call the Resolver contract to retrieve<br>the ETH address record for node “name.eth”
+    note over User Code,Resolver @ 0x1234...: 2. Call the Resolver contract to retrieve<br>the FIL address record for node “name.fil”
     end
 ```
 
@@ -69,22 +69,22 @@ sequenceDiagram
 
 If no Resolver is set in the Registry for the name, then it does not resolve or point to any records.
 
-## The .eth Registrar
+## The .fil Registrar
 A `Registrar` is a smart contract that is given control of a name and issues subnames for it. A registrar can be created with custom rules around registration, like what fees to charge or how many characters a subname is limited to.
 
-The `.eth Registrar` owns the “eth” node and issues subnames such as “name.eth”. This is also commonly referred to as the “NFT contract” for ENS names, because when a .eth name is registered, the contract will issue an NFT to the `Owner`.
+The `.fil Registrar` owns the “fil” node and issues subnames such as “name.fil”. This is also commonly referred to as the “NFT contract” for FNS names, because when a .fil name is registered, the contract will issue an NFT to the `Owner`.
 
 ![Docusaurus themed image](/img/how-ens-works-light-4.jpg#gh-light-mode-only)![Docusaurus themed image](/img/how-ens-works-dark-4.jpg#gh-dark-mode-only)
 
-The ``Owner`` is the owner of the .eth name, and the owner of the issued NFT.
+The ``Owner`` is the owner of the .fil name, and the owner of the issued NFT.
 
-The `Expiry` or `Expiration Date` is the date and time at which the .eth name will expire.
+The `Expiry` or `Expiration Date` is the date and time at which the .fil name will expire.
 
-When a new .eth name is registered, the Registrar will also set the `Manager` in the Registry to the desired address. Usually this is the same address as the `Owner` (the owner of the NFT). However, the `Manager` may be set to a different address, or perhaps the NFT is later transferred to a different address. If the `Owner` of a .eth name is different from the `Manager`, then the .eth Registrar allows the `Owner` to reclaim (in other words, overwrite) the `Manager` in the Registry.
+When a new .fil name is registered, the Registrar will also set the `Manager` in the Registry to the desired address. Usually this is the same address as the `Owner` (the owner of the NFT). However, the `Manager` may be set to a different address, or perhaps the NFT is later transferred to a different address. If the `Owner` of a .fil name is different from the `Manager`, then the .fil Registrar allows the `Owner` to reclaim (in other words, overwrite) the `Manager` in the Registry.
 
-The .eth Registrar currently allows names of at least 3 characters to be registered, and has a custom fee structure based on the length of the name. It also allows names to be renewed (in other words, extending the expiration date).
+The .fil Registrar currently allows names of at least 3 characters to be registered, and has a custom fee structure based on the length of the name. It also allows names to be renewed (in other words, extending the expiration date).
 
 :::info Articles
-For more information on registering .eth names, fees, and renewals, see:
+For more information on registering .fil names, fees, and renewals, see:
  - <Link to="/core/registration/"><b>Core Concepts: </b>Registration</Link>
 :::

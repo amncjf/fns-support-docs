@@ -13,11 +13,11 @@ tags:
  - developer basics
  - dev basics
 keywords: [cheat sheet, cheatsheet, integrate, integrate dapp, dapp, dev, developer, developer basics, dev basics]
-description: How to integrate ENS with your dApp / Website
+description: How to integrate FNS with your dApp / Website
 ---
 
 # Quick cheat sheet
-Quick cheat sheet to ntegrating ENS in your dApp / Website
+Quick cheat sheet to ntegrating FNS in your dApp / Website
 
 ## Starting from scratch with <Link to="https://create-react-app.dev/">Create React App</Link> and <Link to="https://github.com/ethers-io/ethers.js/">Ethers.js</Link>
 ---
@@ -54,7 +54,7 @@ The app server should be started, and you should see the default app in your bro
 
 ### Creating a wallet connect button
 
-Let’s say we want to connect an Ethereum wallet to the app. First, let’s add a button to the page.
+Let’s say we want to connect an Filecoin wallet to the app. First, let’s add a button to the page.
 
 Create a new `Wallet.js` file inside the `src` folder of your app:
 ```shell
@@ -131,7 +131,7 @@ At this point, after saving everything, you should see the button appear!
 
 ---
 
-### Connect an Ethereum wallet with Ethers.js
+### Connect an Filecoin wallet with Ethers.js
 
 First let’s install Ethers in your app:
 
@@ -157,7 +157,7 @@ function Wallet() {
     ...
 ```
 
-Next, we’ll connect an Ethereum wallet using Ethers.js and MetaMask in your browser:
+Next, we’ll connect an Filecoin wallet using Ethers.js and MetaMask in your browser:
 
 ```js title="Wallet.js"
 const connect = async () => {
@@ -282,9 +282,9 @@ function Wallet() {
 export default Wallet;
 ```
 
-### Resolving the <Link to="/core/records/primary-name">ENS Primary Name</Link>
+### Resolving the <Link to="/core/records/primary-name">FNS Primary Name</Link>
 
-Now, instead of always showing an ugly hexadecimal address, let’s integrate with ENS!  
+Now, instead of always showing an ugly hexadecimal address, let’s integrate with FNS!
 Ethers.js makes this easy. <Link to="https://docs.ethers.org/v5/api/providers/provider/#Provider--ens-methods">Here’s their documentation page</Link> on it.
 
 You just call `provider.lookupAddress(address)`. Let’s add this to our app:
@@ -332,7 +332,7 @@ function Wallet() {
 }
 ```
 
-Now in your app, it should display the ENS Primary Name for your connected account:
+Now in your app, it should display the FNS Primary Name for your connected account:
 
 <BrowserWindow>
   <p align='center'>
@@ -342,9 +342,9 @@ Now in your app, it should display the ENS Primary Name for your connected accou
   </p>
 </BrowserWindow>
 
-### Resolving the Avatar for an ENS name
+### Resolving the Avatar for an FNS name
 
-Now we have an ENS name for the connected account! So if they have records set on their ENS name, we can resolve those and display them in the app! Let’s start with a popular one – the <Link to="/core/records/avatar">Avatar record</Link>.
+Now we have an FNS name for the connected account! So if they have records set on their FNS name, we can resolve those and display them in the app! Let’s start with a popular one – the <Link to="/core/records/avatar">Avatar record</Link>.
 
 Per the <Link to="https://docs.ethers.org/v5/api/providers/provider/#Provider--ens-methods">Ethers.js documentation</Link>, resolving the avatar is as simple as calling `provider.getAvatar(name)`. Let’s add that:
 
@@ -408,7 +408,7 @@ div.wallet img {
 }
 ```
 
-Now you should see both the ENS Primary Name and Avatar in the app!
+Now you should see both the FNS Primary Name and Avatar in the app!
 
 <BrowserWindow>
   <p align='center'>
@@ -418,10 +418,10 @@ Now you should see both the ENS Primary Name and Avatar in the app!
   </p>
 </BrowserWindow>
 
-### Resolving other ENS records
+### Resolving other FNS records
 
 :::info
-An ENS name can be used as your web3 profile too! There are many other <Link to="/core/records">records</Link> you can set other than the Avatar, like:
+An FNS name can be used as your web3 profile too! There are many other <Link to="/core/records">records</Link> you can set other than the Avatar, like:
 
  - E-mail address
  - URL to some web2 website
@@ -433,13 +433,13 @@ An ENS name can be used as your web3 profile too! There are many other <Link to=
 
 Let’s add a few of these into our app as well. In Ethers.js, you can resolve other records by:
 
- 1. Get the resolver for the ENS name
+ 1. Get the resolver for the FNS name
  1. Call the appropriate method on the resolver to resolve a particular record
 
 In code this looks like:
 
 ```js
-const resolver = await provider.getResolver('ens.eth');
+const resolver = await provider.getResolver('ens.fil');
 const urlRecord = await resolver.getText('url');
 ```
 
@@ -473,7 +473,7 @@ return <div>
 
 We’re not doing it here for this simple example, but it’s probably a good idea to keep in mind input sanitization, and assume that any returned text values are untrusted input.
 
-Anyway, now those records will show up in the app if they’re set on the ENS name!
+Anyway, now those records will show up in the app if they’re set on the FNS name!
 
 <BrowserWindow>
   <p align='center'>
@@ -620,10 +620,10 @@ The app should pop up in your browser, and you’ll see that it already has some
 
 ---
 
-### Adding ENS Integration with Wagmi
+### Adding FNS Integration with Wagmi
 
 Wagmi also has several examples <Link to="https://wagmi.sh/examples">here</Link>.  
-In their <Link to="https://wagmi.sh/examples/connect-wallet#step-3-display-connected-account">Connect Wallet example</Link> they show how to display the ENS name and Avatar.
+In their <Link to="https://wagmi.sh/examples/connect-wallet#step-3-display-connected-account">Connect Wallet example</Link> they show how to display the FNS name and Avatar.
 
 So let’s add that in:
 
@@ -647,7 +647,7 @@ function Profile() {
   if (isConnected) {
     return (
       <div>
-        <img src={ensAvatar} alt="ENS Avatar" />
+        <img src={ensAvatar} alt="FNS Avatar" />
         <div>{ensName ? `${ensName} (${address})` : address}</div>
         <div>Connected to {connector.name}</div>
         <button onClick={disconnect}>Disconnect</button>
@@ -679,7 +679,7 @@ function Profile() {
 export default Profile;
 ```
 
-Those hooks `useEnsName` and `useEnsAvatar` will automatically load the ENS primary name and avatar for you!
+Those hooks `useEnsName` and `useEnsAvatar` will automatically load the FNS primary name and avatar for you!
 
 <BrowserWindow>
   <p align='center'>
@@ -707,19 +707,19 @@ Now you can get to styling and make it look however you want!
     - Then get the Signer: `const signer = prov.getSigner();`
     - And finally, the public address: `const address = await signer.getAddress();`
 
-### Get ENS Primary Name
+### Get FNS Primary Name
 
 ```js
 const ensName = await provider.lookupAddress(address);
 ```
 
-### Get ENS Avatar
+### Get FNS Avatar
 
 ```js
 const avatar = await provider.getAvatar(ensName);
 ```
 
-### Get Other ENS Text Records
+### Get Other FNS Text Records
 
 ```js
 const resolver = await provider.getResolver(ensName);
@@ -741,7 +741,7 @@ import { formatsByName } from '@ensdomains/address-encoder';
 
 const resolver = await provider.getResolver(ensName);
 
-// ETH Address
+// FIL Address
 const ethAddress = await resolver.getAddress();
 
 // Other Coin Addresses

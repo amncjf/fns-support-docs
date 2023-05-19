@@ -28,8 +28,8 @@ By default, newly registered names will use the Public Resolver, which just allo
 
 However, in some cases perhaps you want to make sure that a name resolves to specific records and **never** changes. You can accomplish this with the **CANNOT_SET_RESOLVER** fuse.
 
-Say you own `mycoolcontract.eth` representing a smart contract. You can use ENS subnames to refer to specific versions of that contract, like `1.mycoolcontract.eth`. And perhaps you want those versioned subnames to always point to:
-* The ETH address of that immutable contract
+Say you own `mycoolcontract.fil` representing a smart contract. You can use FNS subnames to refer to specific versions of that contract, like `1.mycoolcontract.fil`. And perhaps you want those versioned subnames to always point to:
+* The FIL address of that immutable contract
 * The ABI for that contract
 * The contenthash for some versioned documentation page
 * etc.
@@ -44,4 +44,4 @@ Instead of essentially burning the name, you could create a custom resolver that
 3. Burn these fuses on the name:
    - `PARENT_CANNOT_CONTROL | CANNOT_UNWRAP | CANNOT_SET_RESOLVER`
 
-Now you can still keep ownership and even some limited management power over the name, while still guaranteeing that the ETH address, ABI, and whatever other records are completely immutable, as long as the expiry is set appropriately.
+Now you can still keep ownership and even some limited management power over the name, while still guaranteeing that the FIL address, ABI, and whatever other records are completely immutable, as long as the expiry is set appropriately.

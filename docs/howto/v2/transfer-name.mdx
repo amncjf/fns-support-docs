@@ -1,5 +1,5 @@
 ---
-title: Transfer an ENS Name
+title: Transfer an FNS Name
 last_update:
   author: cthulu
 tags:
@@ -9,66 +9,66 @@ tags:
 keywords: [transfer ens, transfer ens name, ens transfer, ens name transfer, send ens, send ens name, ens send, ens name send, move ens, move ens name]
 ---
 
-# Transfer an ENS name
-The owner of an ENS name is called the `Registrant` in the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link>. This is the wallet the ENS name NFT resides in.
-In order to transfer an ENS name you must therefore transfer the `Registrant`.
+# Transfer an FNS name
+The owner of an FNS name is called the `Registrant` in the <Link to="https://app.fildomains.com"><b>FNS Manager App</b></Link>. This is the wallet the FNS name NFT resides in.
+In order to transfer an FNS name you must therefore transfer the `Registrant`.
 
-However, an ENS name contains more records than just `Registrant` which can be set to different wallets. There are three central records involved in name transfers: 
+However, an FNS name contains more records than just `Registrant` which can be set to different wallets. There are three central records involved in name transfers:
 
-<BrowserWindow url="app.ens.domains">
+<BrowserWindow url="app.fildomains.com">
   <Image img="/img/howto/transfer_name_1.png"/>
 </BrowserWindow>
 
 :::info
- 1. **Registrant:** *The owner of the ENS name, the wallet the ENS name NFT resides in.*
+ 1. **Registrant:** *The owner of the FNS name, the wallet the FNS name NFT resides in.*
  1. **Controller:** *The administrator of records, the wallet allowed to make changes to its records (but not transfer the name)*
- 1. **ETH Address:** *The wallet address the ENS name points to, where funds sent to it will arrive.*
+ 1. **FIL Address:** *The wallet address the FNS name points to, where funds sent to it will arrive.*
 :::
 
-When transferring an ENS name, only the `Registrant` record is automatically updated to reflect the new owner wallet.
+When transferring an FNS name, only the `Registrant` record is automatically updated to reflect the new owner wallet.
 Depending on your specific use-case it's therefore a good idea to take a moment and think about what additional records you want to transfer.
 
 ## Completely transfer a name
-If you want to completely transfer a name to a wallet you'll need to set three records to the new wallet in a specific order because only the wallet set as `Controller` is allowed to change the `ETH Address`.
+If you want to completely transfer a name to a wallet you'll need to set three records to the new wallet in a specific order because only the wallet set as `Controller` is allowed to change the `FIL Address`.
 :::info For example
- - If you were to change `Controller` first, you wouldn't be able to set the `ETH Address` without switching to the new wallet.
+ - If you were to change `Controller` first, you wouldn't be able to set the `FIL Address` without switching to the new wallet.
 :::
 
-In order to set everything to the new wallet easily from the wallet that currently owns the ENS name, you'd follow this specific order:
+In order to set everything to the new wallet easily from the wallet that currently owns the FNS name, you'd follow this specific order:
 
 :::info Order
- 1. **ETH Address:** *The wallet address the ENS name points to, where funds sent to it will arrive.*
+ 1. **FIL Address:** *The wallet address the FNS name points to, where funds sent to it will arrive.*
  1. **Controller:** *The administrator of records, the wallet allowed to make changes to its records (but not transfer the name)*
- 1. **Registrant:** *The owner of the ENS name, the wallet the ENS name NFT resides in.*
+ 1. **Registrant:** *The owner of the FNS name, the wallet the FNS name NFT resides in.*
  
-<BrowserWindow url="app.ens.domains">
+<BrowserWindow url="app.fildomains.com">
   <Image img="/img/howto/transfer_name_1.png"/>
 </BrowserWindow>
 :::
 
 ### Go to the Manager App
-First go to the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link> and connect your wallet
-<BrowserWindow url="app.ens.domains">
+First go to the <Link to="https://app.fildomains.com"><b>FNS Manager App</b></Link> and connect your wallet
+<BrowserWindow url="app.fildomains.com">
   <Image img="/img/howto/transfer_name_2b.png"/>
 </BrowserWindow>
 
 Click on ***My Account***
-<BrowserWindow url="app.ens.domains">
+<BrowserWindow url="app.fildomains.com">
   <Image img="/img/howto/transfer_name_3.png"/>
 </BrowserWindow>
 
-In the list of ENS names click on the one you want to transfer to go to it
-<BrowserWindow url="app.ens.domains">
+In the list of FNS names click on the one you want to transfer to go to it
+<BrowserWindow url="app.fildomains.com">
   <Image img="/img/howto/transfer_name_4.png"/>
 </BrowserWindow>
 
 Click the `Transfer` button next to the Registrant field
-<BrowserWindow url="app.ens.domains">
+<BrowserWindow url="app.fildomains.com">
   <Image img="/img/howto/transfer_name_5.png"/>
 </BrowserWindow>
 
-Fill in the ENS name or Ethereum address of the wallet you want to transfer it to and press `Transfer`.
-<BrowserWindow url="app.ens.domains">
+Fill in the FNS name or Filecoin address of the wallet you want to transfer it to and press `Transfer`.
+<BrowserWindow url="app.fildomains.com">
   <Image img="/img/howto/transfer_name_6.png"/>
 </BrowserWindow>
 
@@ -83,5 +83,5 @@ If you would like to register a name on behalf of another wallet, <Link to="http
 </BrowserWindow>
 
 :::info TIP
- If the ENS name recipient does not yet have a wallet address, the name can be sent to the ENSFairy vault for safekeeping. Read more here: <Link to="https://ensfairy.xyz"><b>ensfairy.xyz/deposit</b></Link>
+ If the FNS name recipient does not yet have a wallet address, the name can be sent to the ENSFairy vault for safekeeping. Read more here: <Link to="https://ensfairy.xyz"><b>ensfairy.xyz/deposit</b></Link>
  :::

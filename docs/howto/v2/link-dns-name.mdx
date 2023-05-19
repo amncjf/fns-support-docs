@@ -12,11 +12,11 @@ keywords: [ens dns, ens domain name system, add dns, link dns, import dns, integ
 ---
 
 # Link a DNS name
-ENS supports importing DNS names into ENS, which makes it possible to use, for example, your .com .net or .org DNS name with ENS. Allowing you to use nearly all features of an ENS name with your DNS name.
+FNS supports importing DNS names into FNS, which makes it possible to use, for example, your .com .net or .org DNS name with FNS. Allowing you to use nearly all features of an FNS name with your DNS name.
 
-For example: Coinbase *.cb.id usernames are all issued under their `cb.id` DNS name that was imported into ENS!
+For example: Coinbase *.cb.id usernames are all issued under their `cb.id` DNS name that was imported into FNS!
 
-There are a few pre-requisites to importing a DNS name into ENS:
+There are a few pre-requisites to importing a DNS name into FNS:
 
  - **The DNS name must have DNSSEC enabled with RSA/SHA-256 or ECDSA keys**
  - **An _ens TXT record must be created on the DNS name containing the wallet address to prove ownership of it.**
@@ -43,8 +43,8 @@ A list of popular hosting providers and which DNSSEC key types they support[^1]
 
 ## Step 1: Enable DNSSEC
 
-Go to the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link> and search for your DNS name. You should see a screen like this:
-<BrowserWindow url="app.ens.domains">
+Go to the <Link to="https://app.fildomains.com"><b>FNS Manager App</b></Link> and search for your DNS name. You should see a screen like this:
+<BrowserWindow url="app.fildomains.com">
   <Image img="/img/howto/link-dns-name-1.webp"/>
 </BrowserWindow>
 
@@ -57,7 +57,7 @@ If they don’t, you’ll need to migrate to a DNS provider that does. See:
 > [**Hosting providers**](#hosting-providers)
 
 ## Step 2: Add the TXT-record
-The DNS Registrar on ENS looks for a `TXT record` to verify ownership of the domain. This record has the following attributes:
+The DNS Registrar on FNS looks for a `TXT record` to verify ownership of the domain. This record has the following attributes:
 
 <div align='center'>
 
@@ -70,14 +70,14 @@ The DNS Registrar on ENS looks for a `TXT record` to verify ownership of the dom
 
 </div>
 
-To prove ownership of your DNS name, create a `TXT record` in your DNS zone, _ens.yourdomain.xyz, with text data of the form `a=walletaddress`... where `walletaddress` is the Ethereum wallet you want to give control of the ENS record to.
+To prove ownership of your DNS name, create a `TXT record` in your DNS zone, _ens.yourdomain.xyz, with text data of the form `a=walletaddress`... where `walletaddress` is the Filecoin wallet you want to give control of the FNS record to.
 <BrowserWindow url="support.ensmods.xyz">
   <Image img="/img/howto/link-dns-name-3.webp"/>
 </BrowserWindow>
 
-## Step 3: Linking the name with ENS
-Now you should be able to go back to the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link> and finish linking the DNS name with ENS by pressing `Register`.
-<BrowserWindow url="app.ens.domains">
+## Step 3: Linking the name with FNS
+Now you should be able to go back to the <Link to="https://app.fildomains.com"><b>FNS Manager App</b></Link> and finish linking the DNS name with FNS by pressing `Register`.
+<BrowserWindow url="app.fildomains.com">
   <Image img="/img/howto/link-dns-name-4.webp"/>
 </BrowserWindow>
 
@@ -86,5 +86,5 @@ Now you should be able to go back to the <Link to="https://app.ens.domains"><b>E
 ### I’ve updated the DNS records, but it’s not proceeding to the next steps.
 It can take time for record changes in DNS to propagate throughout the Internet. If you are sure the records are set properly, try waiting for some amount of time and refreshing the DNS import page.
 
-### I've set up DNSSEC but the ENS Manager App doesn't detect it
+### I've set up DNSSEC but the FNS Manager App doesn't detect it
 Use a [DNSSEC Analyzer tool](https://dnssec-debugger.verisignlabs.com/) to look for errors.

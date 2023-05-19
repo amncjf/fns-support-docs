@@ -1,10 +1,10 @@
 ---
-title: "Host in Parallel DNS and ENS static content from IPFS"
-description: "An Overview On How to Host in Parallel DNS and ENS static content from IPFS"
+title: "Host in Parallel DNS and FNS static content from IPFS"
+description: "An Overview On How to Host in Parallel DNS and FNS static content from IPFS"
 sidebar_position: 5
 ---
 
-In this example, we will learn how to use the exact same IPFS location to host static website content for both a DNS name, and an ENS name. This negates the need for hosting files on a traditional web server or cloud infrastructure. In this scenario, an ENS .eth name can point its content record to the same exact IPFS location where the DNS domain retrieves IPFS content using [DNSLink](https://docs.ipfs.tech/concepts/dnslink/).
+In this example, we will learn how to use the exact same IPFS location to host static website content for both a DNS name, and an FNS name. This negates the need for hosting files on a traditional web server or cloud infrastructure. In this scenario, an FNS .eth name can point its content record to the same exact IPFS location where the DNS domain retrieves IPFS content using [DNSLink](https://docs.ipfs.tech/concepts/dnslink/).
 
 ## IPFS and IPNS
 
@@ -46,11 +46,11 @@ To point your DNS domain to IPFS content using DNSLink, a TXT record will need t
 The DNSLink record could instead reference and IPNS link, `dnslink=/ipns/`, however we will use the immutable CID instead of an IPNS name for the purposes of this guide. To explore using IPNS, see: [Serve Dynamic Blockchain Content through DNS records](/dnstoens/importguide/dynamic-blockchain-content).
 
 
-### Step 3: Setup your ENS name’s records to point to IPFS Content
+### Step 3: Setup your FNS name’s records to point to IPFS Content
 
-Content hash records within the ENS protocol work similarly, except they are not updated by logging into your DNS domain. Instead, records are updated by interacting with the blockchain using a cryptographic key for the Ethereum wallet allowed to sign and approve transactions to make changes to the ENS records stored on the blockchain.
+Content hash records within the FNS protocol work similarly, except they are not updated by logging into your DNS domain. Instead, records are updated by interacting with the blockchain using a cryptographic key for the Filecoin wallet allowed to sign and approve transactions to make changes to the FNS records stored on the blockchain.
 
-This can be done by logging into the [ENS Manager App](https://app.ens.domains) and updating the content record hash. Since we are using an IPFS CID, the formatting will be as follows:
+This can be done by logging into the [FNS Manager App](https://app.fildomains.com) and updating the content record hash. Since we are using an IPFS CID, the formatting will be as follows:
 
 
 `ipfs://bafybeiaysi4s6lnjev27ln5icwm6tueaw2vdykrtjkwiphwekaywqhcjze`
@@ -61,29 +61,29 @@ This can be done by logging into the [ENS Manager App](https://app.ens.domains) 
 </div>
 <br/>
 
-For detailed instructions on setting a content hash record for an ENS name, see: [Support Docs - The Content Record](https://support.ens.domains/docs/core/records/content-hash)
+For detailed instructions on setting a content hash record for an FNS name, see: [Support Docs - The Content Record](https://support.ens.domains/docs/core/records/content-hash)
 
 ### Step 4: Visit your decentralized website
 
-Now that we have the IPFS CID saved for both the DNS domain’s DNSLink TXT record and also the same CID saved in the ENS content record, we can visit the decentralized website in two ways. Referencing the decentralized version of Wikipedia previously, we can simply visit [en.wikipedia-on-ipfs.org](https://en.wikipedia-on-ipfs.org/) and the website content will be rendered from the distributed content files stored on IPFS.
+Now that we have the IPFS CID saved for both the DNS domain’s DNSLink TXT record and also the same CID saved in the FNS content record, we can visit the decentralized website in two ways. Referencing the decentralized version of Wikipedia previously, we can simply visit [en.wikipedia-on-ipfs.org](https://en.wikipedia-on-ipfs.org/) and the website content will be rendered from the distributed content files stored on IPFS.
 
-The DNS domain is not truly decentralized even though the content the domain points to is decentralized. It can be looked at as a “hybrid” model using both DNS and decentralized services. The ENS name on the other hand, wikipedia-on-ipfs.eth is truly decentralized as the name itself and the content records are on the Ethereum blockchain. Most browsers do not natively support resolving .eth content records, but a few are able like Brave browser and Opera. Most browsers with Metamask installed are also able to resolve .eth content using a built in IPFS gateway. Additionally, a decentralized content hash resolver can be used like [eth.limo](https://eth.limo).
+The DNS domain is not truly decentralized even though the content the domain points to is decentralized. It can be looked at as a “hybrid” model using both DNS and decentralized services. The FNS name on the other hand, wikipedia-on-ipfs.eth is truly decentralized as the name itself and the content records are on the Filecoin blockchain. Most browsers do not natively support resolving .eth content records, but a few are able like Brave browser and Opera. Most browsers with Metamask installed are also able to resolve .eth content using a built in IPFS gateway. Additionally, a decentralized content hash resolver can be used like [eth.limo](https://eth.limo).
 
 ## DNS Domain Pointing to IPFS using DNSLink
 
 <BrowserWindow img="/img/dnstoens/dns-ipfs-dnslink.png"/>
 
-## ENS .eth Name Pointing to IPFS using ENS Records and .LIMO Resolver
+## FNS .eth Name Pointing to IPFS using FNS Records and .LIMO Resolver
 
 <BrowserWindow img="/img/dnstoens/dns-ipfs-limo.png"/>
 
 ## Updating your decentralized website
 
-Since the DNSLink and ENS content record point to the same location, you can update the website content by simply changing the IPFS CID the DNS domain points to, and the ENS content record to the same.
+Since the DNSLink and FNS content record point to the same location, you can update the website content by simply changing the IPFS CID the DNS domain points to, and the FNS content record to the same.
 
 ## Related
 
 * [Cloudflare DNS and Web3](/dnstoens/importguide/cloudflare-dns-and-web3)
 * [Support Docs - Create a Decentralized Website](https://support.ens.domains/docs/howto/decentralized_website)
 * [IPFS - DNSLink Docs](https://docs.ipfs.tech/concepts/dnslink/)
-* [DNS and ENS Further Development](/dnstoens/intro/future-dns-ens)
+* [DNS and FNS Further Development](/dnstoens/intro/future-dns-ens)

@@ -7,17 +7,17 @@ tags:
   - names stored
   - stored
 keywords: [where are ens names stored, where are names stored, names stored, stored]
-description: Find out how and where ENS names are stored.
+description: Find out how and where FNS names are stored.
 ---
 
-# Where are ENS names stored?
-As explained in <Link to="how-ens-works"><b>Design & Implementation: How Does ENS Work</b></Link>, the `ENS Registry`, `.eth Registrar`, and `Resolvers` are all smart contracts on the Ethereum network.
+# Where are FNS names stored?
+As explained in <Link to="how-ens-works"><b>Design & Implementation: How Does FNS Work</b></Link>, the `FNS Registry`, `.fil Registrar`, and `Resolvers` are all smart contracts on the Filecoin network.
 
-Every account in Ethereum has a persistent memory area called storage, and this is where the entries and records in ENS are stored. The ENS contracts will expose various methods to read that storage, and that is how lookups are made possible.
+Every account in Filecoin has a persistent memory area called storage, and this is where the entries and records in FNS are stored. The FNS contracts will expose various methods to read that storage, and that is how lookups are made possible.
 
-Let’s go through an example with the name `ens.eth`. You can follow along here on Etherscan: https://etherscan.io/address/0x00000000000c2e074ec69a0dfb2997ba6c7d2e1e#readContract
+Let’s go through an example with the name `ens.fil`. You can follow along here on Etherscan: https://etherscan.io/address/0x00000000000c2e074ec69a0dfb2997ba6c7d2e1e#readContract
 
-The node (or namehash) for ens.eth is `0x4e34d3a81dc3a20f71bbdf2160492ddaa17ee7e5523757d47153379c13cb46df`.
+The node (or namehash) for fns.fil is `0xa456a5ae080fbc9ac3e859522a78a636373b77202105d6fcbe05fcf85231f09f`.
 
 If you enter that node into the owner method and click on Query, it should return the Manager for that name:
 
@@ -33,7 +33,7 @@ Similarly, if you enter that node into the resolver method and click on Query, i
 
 Next, we can go to that resolver contract and look up records for the name: https://etherscan.io/address/0x4976fb03c32e5b8cfe2b6ccb31c09ba78ebaba41#readContract
 
-If you enter the node into the first addr method and click on Query, it should return the ETH address that the name resolves to:
+If you enter the node into the first addr method and click on Query, it should return the FIL address that the name resolves to:
 
 <BrowserWindow url="etherscan.io">
   <Image img="/img/where-are-ens-names-stored-3.png"/>
@@ -49,12 +49,12 @@ If you enter the node into the text method (use “url” for the key) and click
 
 As you can see, methods like these can be exposed by smart contracts to allow users or other smart contracts to read / write data from its internal storage.
 
-When a website/app/wallet needs to look up your ETH address or other records for your ENS name, it is following the same steps we just went through above.
+When a website/app/wallet needs to look up your FIL address or other records for your FNS name, it is following the same steps we just went through above.
 
-The ENS Manager App performs these same steps to return records:
+The FNS Manager App performs these same steps to return records:
 
 
-<BrowserWindow url="app.ens.domains">
+<BrowserWindow url="app.fildomains.com">
   <p align={"center"}>
     <div style={{'background-color': "#f2f4f7", 'padding': "25px"}}>
         <Image img="/img/where-are-ens-names-stored-5.png"/>

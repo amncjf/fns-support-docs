@@ -10,7 +10,7 @@ A common solution is to use the [InterPlanetary File System (IPFS)](https://ipfs
 
 Since CIDs are based on the hash of the content, if the content changes, so does the CID. When pointing a DNS domain to IPFS content, it's important to consider how often the content will change.
 
-This guide will use IPNS (InterPlanetary Name System) to reference IPFS content instead of directly with a CID that would change once content is updates. To learn more about hosting unchanging content see: [Host in Parallel DNS and ENS static content from IPFS](/dnstoens/importguide/host-in-parallel)
+This guide will use IPNS (InterPlanetary Name System) to reference IPFS content instead of directly with a CID that would change once content is updates. To learn more about hosting unchanging content see: [Host in Parallel DNS and FNS static content from IPFS](/dnstoens/importguide/host-in-parallel)
 
 ## How do DNS records point to website content?
 
@@ -46,7 +46,7 @@ Instead of relying on a centralized pinning service, we can use a hybrid model. 
 
 ### Step 2: Edit and Save your Website’s Static Files
 
-You will want to create a folder to save your static website files in. We are setting up a simple website that will not rely on dynamic content, though it is possible to load dynamic content including blockchain data through querying APIs via Javascript. That is out of scope for this guide, but it should be noted this is possible. See [Host in Parallel DNS and ENS content from IPFS](#)
+You will want to create a folder to save your static website files in. We are setting up a simple website that will not rely on dynamic content, though it is possible to load dynamic content including blockchain data through querying APIs via Javascript. That is out of scope for this guide, but it should be noted this is possible. See [Host in Parallel DNS and FNS content from IPFS](#)
 
 You can find static website templates online or use static generators such as [Hugo](https://gohugo.io/) or [Gatsby](https://www.gatsbyjs.com/docs/glossary/static-site-generator/). There are many more static site generators, as well as static website templates. To quickly get started, you can download and experiment with ready-made [Static Bootstrap Templates](https://bootstrapmade.com/). 
 
@@ -121,6 +121,6 @@ You can also log directly into most pinning service platforms and specific a CID
 
 ## Related
 
-* [DNS + ENS Guide - Connect a DNS name to the ENS Protocol](/dnstoens/importguide/connect-dns-to-ens)
-* [DNS + ENS Guide - Cloudflare DNS and Web3](/dnstoens/importguide/cloudflare-dns-and-web3)
-* [ENS Documentation - DNS Registrar](https://docs.ens.domains/contract-api-reference/dns-registrar)
+* [DNS + FNS Guide - Connect a DNS name to the FNS Protocol](/dnstoens/importguide/connect-dns-to-ens)
+* [DNS + FNS Guide - Cloudflare DNS and Web3](/dnstoens/importguide/cloudflare-dns-and-web3)
+* [FNS Documentation - DNS Registrar](https://docs.ens.domains/contract-api-reference/dns-registrar)

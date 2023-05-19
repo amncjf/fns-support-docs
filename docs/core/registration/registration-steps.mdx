@@ -12,12 +12,12 @@ description: Information on the Registration Steps
 
 # Registration Steps
 
-There are three steps involved in registering an ENS name that is intended to mitigate the problem of front-running.
+There are three steps involved in registering an FNS name that is intended to mitigate the problem of front-running.
 
-Front-running an ENS name would be possible if registration happened in one transaction.
+Front-running an FNS name would be possible if registration happened in one transaction.
 Someone could “see” the single registration transaction in the mempool, and send the same transaction but with higher gas so the transaction they sent settles first.
 
-In essence, “sniping” the name before registration completes. For this reason, ENS name registrations rely on a `Reveal-Commitment Scheme`.
+In essence, “sniping” the name before registration completes. For this reason, FNS name registrations rely on a `Reveal-Commitment Scheme`.
 
 :::info Learning Resource
 For a step on step guide on registering a name, see
@@ -45,7 +45,7 @@ class A active;
 A-->B-->C;
 ```
 
-The commit in Step 1 hashes a secret key generated and stored in your browser's local storage and hashes it with your wallet address and ENS name so that you can later register it without revealing it publicly.
+The commit in Step 1 hashes a secret key generated and stored in your browser's local storage and hashes it with your wallet address and FNS name so that you can later register it without revealing it publicly.
 
 Only the user knows the values of the cryptographic hash.
 
@@ -61,7 +61,7 @@ No registration fees are collected in this step. The fees are only for gas to sa
 
 <!--
 
-<BrowserWindow url="app.ens.domains">
+<BrowserWindow url="app.fildomains.com">
   <Image img="/img/registration_3steps_img1.webp"/>
 </BrowserWindow>
 
@@ -89,11 +89,11 @@ class B active;
 A-->B-->C;
 ```
 
-A 1 minute waiting period begins to prevent the front-running of the ENS name registration. This wait period acts as a “buffer” so that in the final step, the revealed ENS name’s registration cannot be front-run with a higher gas transaction.
+A 1 minute waiting period begins to prevent the front-running of the FNS name registration. This wait period acts as a “buffer” so that in the final step, the revealed FNS name’s registration cannot be front-run with a higher gas transaction.
 
 <!--
 
-<BrowserWindow url="app.ens.domains">
+<BrowserWindow url="app.fildomains.com">
   <Image img="/img/registration_3steps_img2.webp"/>
 </BrowserWindow>
 
@@ -121,11 +121,11 @@ class C active;
 A-->B-->C;
 ```
 
-The ENS name registration is revealed on-chain. Once the registration transaction is performed and the ENS name is registered; the ERC-721 NFT for the ENS name is minted and transferred into the owner's wallet.
+The FNS name registration is revealed on-chain. Once the registration transaction is performed and the FNS name is registered; the ERC-721 NFT for the FNS name is minted and transferred into the owner's wallet.
 
 <!--
 
-<BrowserWindow url="app.ens.domains">
+<BrowserWindow url="app.fildomains.com">
   <Image img="/img/registration_3steps_img3.webp"/>
 </BrowserWindow>
 

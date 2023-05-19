@@ -19,7 +19,7 @@ const sidebars = {
     {
       type: 'html',
       value:
-        '<a class="navbar__brand sidebar__brand" href="/"><div class="navbar__logo"><img src="/img/enslogo_new.svg" alt="ENS Logo"></div>Support</a>',
+        '<a class="navbar__brand sidebar__brand" href="/"><div class="navbar__logo"><img src="/img/enslogo_new.svg" alt="FNS Logo"></div>Support</a>',
         defaultStyle: true
     },
     {

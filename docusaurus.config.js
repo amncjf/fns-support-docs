@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'ENS Support',
-  tagline: 'ENS Support Documentation',
+  title: 'FNS Support',
+  tagline: 'FNS Support Documentation',
   url: 'https://support.ens.domains',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -130,9 +130,9 @@ const config = {
         },
       navbar: {
         hideOnScroll: false,
-        title: 'ENS Support',
+        title: 'FNS Support',
         /*logo: {
-          alt: 'ENS Logo',
+          alt: 'FNS Logo',
           src: 'img/enssite_logo.svg',
           srcDark: 'img/newsite-logo-dark.svg',
         },*/
@@ -145,7 +145,7 @@ const config = {
 	  */
           // {
           //   type: 'html',
-          //   value: '<a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/enssite_logo.svg" alt="ENS Logo"></div>ENS Support<span>Docs<span></a>'
+          //   value: '<a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/enssite_logo.svg" alt="FNS Logo"></div>FNS Support<span>Docs<span></a>'
           // },
         /*{
             type: 'doc',
@@ -246,11 +246,11 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'ENS Labs',
+                label: 'FNS Labs',
                 href: 'https://ens.domains',
               },
               {
-                label: 'ENS GitHub',
+                label: 'FNS GitHub',
                 href: 'https://github.com/ensdomains',
               },
             ],

@@ -12,39 +12,39 @@ keywords: [ens dns, ens domain name system, add dns, link dns, import dns, integ
 ---
 
 # Integrate a DNS name
-ENS supports importing DNS names into ENS, which makes it possible to use, for example, your .com .net or .org DNS name with ENS. Allowing you to use nearly all features of an ENS name with your DNS name.
+FNS supports importing DNS names into FNS, which makes it possible to use, for example, your .com .net or .org DNS name with FNS. Allowing you to use nearly all features of an FNS name with your DNS name.
 
-For example: Coinbase *.cb.id usernames are all issued under their `cb.id` DNS name that was imported into ENS!
+For example: Coinbase *.cb.id usernames are all issued under their `cb.id` DNS name that was imported into FNS!
 
-There are a few pre-requisites to importing a DNS name into ENS:
+There are a few pre-requisites to importing a DNS name into FNS:
 
  - **The DNS name must have DNSSEC enabled with RSA/SHA-256 or ECDSA keys**
  - **An _ens TXT record must be created on the DNS name containing the wallet address to prove ownership of it.**
 
 :::info
-You can only integrate existing DNS domain names that you own with ENS. You *cannot* create new domain names with non-existing
+You can only integrate existing DNS domain names that you own with FNS. You *cannot* create new domain names with non-existing
 TLD's this way.
 :::
 
 ## Integrating a DNS name
-Go to the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link>, connect your wallet, search for your DNS domain name and click on it to continue.
-<BrowserWindow url="app.ens.domains">
+Go to the <Link to="https://app.fildomains.com"><b>FNS Manager App</b></Link>, connect your wallet, search for your DNS domain name and click on it to continue.
+<BrowserWindow url="app.fildomains.com">
   <Image img="/img/howto/v3-integrate-dns-1.png"/>
 </BrowserWindow>
 
 ### 1. Enable DNSSEC
-Before we can integrate an existing DNS domain name with ENS we'll need to enable DNSSEC for it to establish a chain of trust between the domain name and ENS.
+Before we can integrate an existing DNS domain name with FNS we'll need to enable DNSSEC for it to establish a chain of trust between the domain name and FNS.
 
 Not all registrars or hosting providers support DNSSEC, and some only support it as an additional paid service.
 
-<BrowserWindow url="app.ens.domains">
+<BrowserWindow url="app.fildomains.com">
   <Image img="/img/howto/v3-integrate-dns-3.png"/>
 </BrowserWindow>
 
 Once you've enabled DNSSEC press `Check` to continue.
 
 :::info
-In order for your registrars or hosting providers DNSSEC to work with ENS it must use either `RSA/SHA-256` or `ECDSA` keys.  
+In order for your registrars or hosting providers DNSSEC to work with FNS it must use either `RSA/SHA-256` or `ECDSA` keys.
 
 If they don’t, you’ll need to migrate to a DNS provider that does. See `Hosting providers` below.
 
@@ -79,11 +79,11 @@ A list of popular hosting providers and which DNSSEC key types they support.[^1]
 
 ### 2. Add the TXT-record
 In this step you'll need to add a TXT-record to your domain name to provide ownership of it, using your registrar or hosting provider's management interface.
-<BrowserWindow url="app.ens.domains">
+<BrowserWindow url="app.fildomains.com">
   <Image img="/img/howto/v3-integrate-dns-2.png"/>
 </BrowserWindow>
 
-The DNS Registrar on ENS looks for a `TXT record` to verify ownership of the domain. This record has the following attributes:
+The DNS Registrar on FNS looks for a `TXT record` to verify ownership of the domain. This record has the following attributes:
 
 <div align='center'>
 
@@ -109,12 +109,12 @@ The DNS Registrar on ENS looks for a `TXT record` to verify ownership of the dom
   </TabItem>
 </Tabs>
 
-To prove ownership of your DNS name, create a `TXT record` in your DNS zone, _ens.yourdomain.xyz, with text data of the form `a=walletaddress`... where `walletaddress` is the Ethereum wallet you want to give control of the ENS record to.
+To prove ownership of your DNS name, create a `TXT record` in your DNS zone, _ens.yourdomain.xyz, with text data of the form `a=walletaddress`... where `walletaddress` is the Filecoin wallet you want to give control of the FNS record to.
 
 ---
 
 ### 3. Claim the DNS domain
-Now you should be able to go back to the <Link to="https://app.ens.domains"><b>ENS Manager App</b></Link> and finish linking the DNS name with ENS by pressing `Register`.
+Now you should be able to go back to the <Link to="https://app.fildomains.com"><b>FNS Manager App</b></Link> and finish linking the DNS name with FNS by pressing `Register`.
 
 <BrowserWindow url="support.ensmods.xyz">
   <Image img="/img/howto/v3-integrate-dns-4.png"/>
@@ -143,5 +143,5 @@ Now you should be able to go back to the <Link to="https://app.ens.domains"><b>E
 ### I’ve updated the DNS records, but it’s not proceeding to the next steps.
 It can take time for record changes in DNS to propagate throughout the Internet. If you are sure the records are set properly, try waiting for some amount of time and refreshing the DNS import page.
 
-### I've set up DNSSEC but the ENS Manager App doesn't detect it
+### I've set up DNSSEC but the FNS Manager App doesn't detect it
 Use a [DNSSEC Analyzer tool](https://dnssec-debugger.verisignlabs.com/) to look for errors.

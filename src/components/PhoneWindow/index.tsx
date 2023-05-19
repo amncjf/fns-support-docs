@@ -8,7 +8,7 @@
 /**
  * This component is based on Facebook's "BrowserWindow" component
  * and modified for use with mobile phone screenshots where a BrowserWindow or ImageWindow might not be suitable.
- * - cthulu.eth
+ * - cthulu.fil
  */
 
 import React, {type ReactNode} from 'react';
